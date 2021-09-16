@@ -1,0 +1,15 @@
+.disqualification-msg-container {
+    background: white;
+    display: block;
+    height: 80px;
+    line-height: 25px;
+    position: relative;
+}
+
+.info-message-disqualification{
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: #184c8f;
+    font-size: 16px;
+    font-weight: 600;
+}

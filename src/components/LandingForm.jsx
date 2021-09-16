@@ -1,7 +1,28 @@
 import '../css/components/landing-form.css';
+import { useInput } from '../custom-hooks/use-input'
+import { useHistory } from "react-router-dom";
 
 const LandingForm = ({ onSubmitApplication }) => {
+    const history = useHistory();
+    const { value: autoPurchasePrice, bind: bindAutoPurchasePrice } = useInput('');
+    const { value: autoMake, bind: bindAutoMake } = useInput('');
+    const { value: autoModel, bind: bindAutoModel } = useInput('');
+    const { value: userEstimatedYearlyIncome, bind: bindUserEstimatedYearlyIncome } = useInput('');
+    const { value: userEstimatedCreditScore, bind: bindUserEstimatedCreditScore } = useInput('');
 
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onSubmitApplication(
+            {
+                autoPurchasePrice,
+                autoMake,
+                autoModel,
+                userEstimatedYearlyIncome,
+                userEstimatedCreditScore
+            }
+        );
+    }
     return (
         <div id="booking" className="section">
             <div className="loader" id="loader-4">
