@@ -26,7 +26,7 @@ const checkLoanEligibility = (loanApplication) => new Promise((resolve, reject) 
     var delayInMilliseconds = 1000;
 
     setTimeout(function () {
-        if (loanApplication.userEstimatedYearlyIncome >= 10000) {
+        if (loanApplication.autoPurchasePrice <= (loanApplication.userEstimatedYearlyIncome/5) || loanApplication.userEstimatedCreditScore >= 600) {
             resolve({
                 data: {
                     isSuccessful: true,
